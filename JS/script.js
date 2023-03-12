@@ -23,9 +23,10 @@ btnBuscarFilme.onclick  = async () => {
                 );
                 filmes.push(filme);
             });
-            listarFilmes(filmes);
+            
 
-        })
+        });
+        listarFilmes(filmes);
         
     }
     return false;
@@ -72,4 +73,5 @@ let listarFilmes = async (filmes) => {
             listaFilmes.appendChild(await filme.getCard());
         });
     }
+    
 }

@@ -11,3 +11,12 @@
     flex-wrap: wrap;
     padding: 2rem;
 }
+.card img{
+    max-width: 50vh;
+    height: 22rem;
+}
+.card{
+    margin-left: 3vh;
+    width: 40vh;
+    margin-bottom: 5vh;
+}

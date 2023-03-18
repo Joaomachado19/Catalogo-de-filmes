@@ -14,7 +14,7 @@ class Diretor
 }
 class Filme
 {
-    constructor(id,titulo,ano,genero,duracao,sinopse,cartaz,direcao,elenco,classificacao,avaliacao){
+    constructor(id,titulo,ano,genero,duracao,sinopse,cartaz,direcao,elenco,classificacao,avaliacao,btnDetalhes){
         this.id=id;
         this.titulo=titulo;
         this.ano=ano;
@@ -25,7 +25,8 @@ class Filme
         this.direcao=direcao;
         this.elenco=elenco;
         this.classificacao=classificacao;
-        this.avaliacao=avaliacao;
+        this.avaliacao=avaliacao,
+        this.btnDetalhes=null;
     }
 
     getCard = async () => {
@@ -57,11 +58,20 @@ class Filme
         card.appendChild(cardBody)
         cardBody.appendChild(hCardTitle)
         cardBody.appendChild(divDetalhes)
-        let btnDetalhes = document.createElement('button');
-        btnDetalhes.appendChild(document.createTextNode("Detalhes"));
-        cardBody.appendChild(btnDetalhes);
+
+        this.setBtnDetalhes();
+        cardBody.appendChild(this.getBtnDetalhes());
         return card;
     }
     
+  setBtnDetalhes= () => {
+    this.btnDetalhes = document.createElement('button');
+    this.btnDetalhes.appendChild(document.createTextNode("Detalhes"));
+    this.btnDetalhes.setAttribute("id",this.id);
+    this.btnDetalhes.setAttribute("class","btnDetalhesFilme");
+}
+getBtnDetalhes= () =>{
+    return this.btnDetalhes
+}  
 } 
 

@@ -8,13 +8,13 @@ btnBuscarFilme.onclick  = () => {
         .then((resp) => {
             resp.Search.forEach((item)=>{
                 let filme = new Filme(
-                    item.imdbID,
+                    item.imdbId,
                     item.Title,
                     item.Year,
                     null,
-                    null,
-                    null,
+                    item.Genero,
                     item.Poster,
+                    null,
                     null,
                     null,
                     null,
@@ -68,3 +68,6 @@ let detalhesFilme = async (id) =>{
         console.log(filme)
     })
 }
+fecharDetalhes.addEventListener ("click",function(){
+    document.getElementById("mostrar-filmes").style.display = "none";
+})

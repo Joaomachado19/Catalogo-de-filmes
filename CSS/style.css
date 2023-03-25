@@ -20,3 +20,14 @@
     width: 40vh;
     margin-bottom: 5vh;
 }
+.btnDetalhesFilme{
+    width: 10vh;
+    border-radius: 15px;
+    background-color: #1E90FF;
+    color: #fff;
+    border-style: groove;
+}
+.btnDetalhesFilme:hover{
+    background-color: #fff;
+    color: #1E90FF;
+}

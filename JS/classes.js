@@ -72,6 +72,30 @@ class Filme
 }
 getBtnDetalhes= () =>{
     return this.btnDetalhes
+}
+getCardDetalhes = () =>{
+    let cardDetalhesFilmeimg = document.createElement("div");
+    cardDetalhesFilmeimg.setAttribute("class","card-Detalhes-img");
+    let imgDetalhes = document.createElement("img");
+    imgDetalhes.setAttribute("class","img-detalhes");
+    imgDetalhes.setAttribute("src", this.cartaz);
+    let cardDetalhes = document.createElement("div");
+    cardDetalhes.setAttribute("class","cardDetalhes");
+    let detalhesBody = document.createElement("div");
+    detalhesBody.setAttribute("class","detalhes-body");
+    
+    let btnSalvar = document.createElement('button');
+    btnSalvar.appendChild(document.createTextNode('Salvar'));
+    btnSalvar.setAttribute('id',"btnSalvar");
+    divDetalhes.appendChild(btnSalvar);
+
+    let btnFechar = document.createElement('button');
+    btnFechar.appendChild(document.createTextNode('Fechar'));
+    btnFechar.setAttribute('id','btnFechar');
+    divDetalhes.appendChild(btnFechar);
+
+   
 }  
+
 } 
 

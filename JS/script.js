@@ -1,5 +1,7 @@
 let inputBuscarFilme = document.querySelector("#input-buscar-filme");
 let btnBuscarFilme = document.querySelector("#btn-buscar-filme");
+let listaFilmes = document.querySelector("#lista-filmes");
+let mostrarFilmes = document.querySelector("#mostrar-filme");
 btnBuscarFilme.onclick  = () => {
     if(inputBuscarFilme.value.length > 0){
         let filmes = new Array();
@@ -38,73 +40,45 @@ btnBuscarFilme.onclick  = () => {
 
 
 
-let listarFilmes = async (filmes) => {
-
-   let listaFilmes = await document.querySelector("#lista-filmes");
-
-   listaFilmes.innerHTML = "";
-
-   if(filmes.length > 0){
-
-    filmes.forEach(async(filme) =>{
-
-        console.log(filme);
-
-        listaFilmes.appendChild(await filme.getCard());
-
-        filme.getBtnDetalhes().onclick=()=>{
-
-            detalhesFilme(filme.id);
-
-        }
-
-    });
-
-   }
-
+let listarFilmes = async (filmes) => { 
+    listaFilmes.style.display = 'flex';
+    listaFilmes.innerHTML = "";
+    console.log(listaFilmes);
+    if(filmes.length > 0){
+        filmes.forEach(async(filme)=>{
+            console.log(filme);
+            listaFilmes.appendChild(await filme.getCard());
+            filme.getBtnDetalhes().onclick= async()=>{
+                listaFilmes.style.display = 'none';
+                detalhesFilme(filme.id);
+            }
+        })
+    }
 }
 
-
-
-
 let detalhesFilme = async (id) =>{
-
-    fetch("http://www.omdbapi.com/?apikey=bb1d4839&i="+id)
-
-    .then((resp)=> resp.json())
-
-    .then((resp) => {
-
+    console.log(id)
+    fetch("http://www.omdbapi.com/?apikey=bb1d4839&s="+id)
+    .then((resp)=>resp.json())
+    .then((resp)=>{
         console.log(resp);
-
         let filme = new Filme(
-
             resp.imdbID,
-
             resp.Title,
-
             resp.Year,
-
             resp.Genre.split(","),
-
             resp.Runtime,
-
             resp.Poster,
-
-            resp.plot,
-
+            resp.Plot,
             resp.Director,
-
             resp.Actors.split(","),
-
-            resp.awards,
-
+            resp.Awards,
             resp.imdbRating
+        );
+        console.log(filme.getCardDetalhes());
+        mostrarFilmes.style.display = 'flex';
+        mostrarFilmes.appendChild(filme.getCardDetalhes());
 
-        )
-
-        console.log(filme)
-
-    })
-
+        console.log(filme);
+    });
 }

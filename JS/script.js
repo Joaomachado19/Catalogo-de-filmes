@@ -56,29 +56,27 @@ let listarFilmes = async (filmes) => {
     }
 }
 
-let detalhesFilme = async (id) =>{
-    console.log(id)
-    fetch("http://www.omdbapi.com/?apikey=bb1d4839&s="+id)
-    .then((resp)=>resp.json())
-    .then((resp)=>{
+let detalhesFilme = async (id) => {
+    fetch("http://www.omdbapi.com/?apikey=bb1d4839&i="+id)
+    .then((resp) => resp.json())
+    .then((resp) => {
         console.log(resp);
         let filme = new Filme(
             resp.imdbID,
             resp.Title,
             resp.Year,
-            resp.Genre.split(","),
+            resp.Genre.split(", "),
             resp.Runtime,
-            resp.Poster,
             resp.Plot,
+            resp.Poster,
             resp.Director,
-            resp.Actors.split(","),
+            resp.Actors.split(", "),
             resp.Awards,
             resp.imdbRating
-        );
-        console.log(filme.getCardDetalhes());
-        mostrarFilmes.style.display = 'flex';
-        mostrarFilmes.appendChild(filme.getCardDetalhes());
+        )
 
-        console.log(filme);
+        mostrarFilmes.style.display = "flex";
+        mostrarFilmes.appendChild(filme.getDetalhesFilme());
+
     });
 }

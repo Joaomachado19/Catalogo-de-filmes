@@ -73,54 +73,72 @@ class Filme
 getBtnDetalhes= () =>{
     return this.btnDetalhes
 }
-getCardDetalhes = () => {
-    let cardDetalhes = document.createElement('div');
-    cardDetalhes.setAttribute("class","cardDetalhes");
-    cardDetalhes.setAttribute("style","display:flex; padding: 2rem;");
-    let imgDetalhes = document.createElement("img");
-    imgDetalhes.setAttribute("class","card-img-detalhes");
-    imgDetalhes.setAttribute("src",this.cartaz);
-    let cardBodyDetalhes = document.createElement("div");
-    cardBodyDetalhes.setAttribute("class","card-body-detalhes");
-    cardBodyDetalhes.setAttribute("style","margin-left: 2rem;");
-    let hCardTitle = document.createElement("h5");
-    hCardTitle.setAttribute("class", "card-title");
-    hCardTitle.setAttribute("style", "text-align:center;");
-    hCardTitle.appendChild(document.createTextNode(this.titulo));
-    let divDetalhes = document.createElement("div");
-    divDetalhes.setAttribute("Style","display:flex; justify-content:space-around; flex-direction: column; align-items: center;");
-    let divAno = document.createElement("div");
-    let divGenero = document.createElement("div");
-    let divDuracao = document.createElement("div");
-    let divDirecao = document.createElement("div");
-    let divElenco = document.createElement("div");
-    let divAvaliacao = document.createElement("div");
-    let divSinopse = document.createElement("div");
-   
+getDetalhesFilme =  () => {
+
+    const cardDetalhes = document.createElement('div');
+    cardDetalhes.setAttribute("class", "card-detalhes");
+
+    const imgDetalhes = document.createElement("img");
+    imgDetalhes.setAttribute("class", "img-detalhes");
+    imgDetalhes.setAttribute("src", this.cartaz);
+
+    const cardBodyDetalhes = document.createElement("div");
+    cardBodyDetalhes.setAttribute("class", "body-detalhes");
+
+    const hTitleDetalhes = document.createElement("h2");
+    hTitleDetalhes.setAttribute("class", "cardTitle");
+    hTitleDetalhes.appendChild(document.createTextNode(this.titulo));
+
+    const divDetalhes = document.createElement("div");
+    divDetalhes.setAttribute("class", "div-detalhes");
+
+    const divAno = document.createElement("div");
+    divAno.setAttribute("class", "div-ano");
+    divAno.appendChild(document.createTextNode("Ano: "));
+
+    const divGenero = document.createElement("div");
+    divGenero.setAttribute("class", "div-genero");
+
+    const divDuracao = document.createElement("div");
+    divDuracao.setAttribute("class", "div-duracao");
+
+    const divDirecao = document.createElement("div");
+    divDirecao.setAttribute("class", "div-direcao");
+
+    const divElenco = document.createElement("div");
+    divElenco.setAttribute("class", "div-elenco");
+
+    const divSinopse = document.createElement("div");
+    divSinopse.setAttribute("class", "div-sinopse");
+
+    const divAvaliacao = document.createElement("div");
+    divAvaliacao.setAttribute("class", "div-avaliacao");
+
     divAno.appendChild(document.createTextNode(this.ano));
     divGenero.appendChild(document.createTextNode(this.genero));
-    divDuracao.appendChild(document.createTextNode(this.duraca));
+    divDuracao.appendChild(document.createTextNode(this.duracao));
     divDirecao.appendChild(document.createTextNode(this.direcao));
     divElenco.appendChild(document.createTextNode(this.elenco));
-    divAvaliacao.appendChild(document.createTextNode(this.avaliacao));
     divSinopse.appendChild(document.createTextNode(this.sinopse));
-   
+    divAvaliacao.appendChild(document.createTextNode(this.avaliacao));
+
     divDetalhes.appendChild(divAno);
     divDetalhes.appendChild(divGenero);
     divDetalhes.appendChild(divDuracao);
     divDetalhes.appendChild(divDirecao);
     divDetalhes.appendChild(divElenco);
-    divDetalhes.appendChild(divAvaliacao);
     divDetalhes.appendChild(divSinopse);
+    divDetalhes.appendChild(divAvaliacao);
 
     cardDetalhes.appendChild(imgDetalhes);
     cardDetalhes.appendChild(cardBodyDetalhes);
 
-    cardBodyDetalhes.appendChild(hCardTitle);
-    cardBodyDetalhes.appendChild(divDetalhes)
+    cardBodyDetalhes.appendChild(hTitleDetalhes);
+    cardBodyDetalhes.appendChild(divDetalhes);
 
     return cardDetalhes;
-}  
+
+}
 
 } 
 

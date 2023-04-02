@@ -77,6 +77,14 @@ let detalhesFilme = async (id) => {
 
         mostrarFilmes.style.display = "flex";
         mostrarFilmes.appendChild(filme.getDetalhesFilme());
-
+        document.querySelector('#btnFechar').onclick = () =>{
+            document.querySelector("#lista-filmes").style.display = "flex";
+            document.querySelector("#mostrar-filme").innerHTML="";
+            document.querySelector("#mostrar-filme").style.display = "none";
+        }
+        
+        document.querySelector("#btnSalvar").onclick = () =>{
+            localStorage.setItem('filme',JSON.stringify(filme))
+        }
     });
 }

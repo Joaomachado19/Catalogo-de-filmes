@@ -52,3 +52,26 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border: 3px solid #000;
     border-radius: 10px;
 }
+#btnFechar{
+    width: 12vh;
+    border-radius: 15px;
+    background-color: #1E90FF;
+    color: #fff;
+    border-style: groove;
+}
+#btnFechar:hover{
+    background-color: #fff;
+    color: #1E90FF;
+}
+#btnSalvar{
+    width: 12vh;
+    border-radius: 15px;
+    background-color: #1E90FF;
+    color: #fff;
+    border-style: groove;
+    margin-left: 1em;
+}
+#btnSalvar:hover{
+    background-color: #fff;
+    color: #1E90FF;
+}

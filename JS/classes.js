@@ -121,7 +121,6 @@ getDetalhesFilme =  () => {
     divElenco.appendChild(document.createTextNode(this.elenco));
     divSinopse.appendChild(document.createTextNode(this.sinopse));
     divAvaliacao.appendChild(document.createTextNode(this.avaliacao));
-
     divDetalhes.appendChild(divAno);
     divDetalhes.appendChild(divGenero);
     divDetalhes.appendChild(divDuracao);
@@ -129,13 +128,19 @@ getDetalhesFilme =  () => {
     divDetalhes.appendChild(divElenco);
     divDetalhes.appendChild(divSinopse);
     divDetalhes.appendChild(divAvaliacao);
-
     cardDetalhes.appendChild(imgDetalhes);
     cardDetalhes.appendChild(cardBodyDetalhes);
-
     cardBodyDetalhes.appendChild(hTitleDetalhes);
     cardBodyDetalhes.appendChild(divDetalhes);
 
+    let btnFechar = document.createElement('button');
+    btnFechar.appendChild(document.createTextNode('Fechar'));
+    btnFechar.setAttribute('id','btnFechar');
+    divDetalhes.appendChild(btnFechar);
+    let btnSalvar = document.createElement('button');
+    btnSalvar.appendChild(document.createTextNode('Salvar'));
+    btnSalvar.setAttribute('id','btnSalvar');
+    divDetalhes.appendChild(btnSalvar);
     return cardDetalhes;
 
 }

@@ -2,6 +2,7 @@ let inputBuscarFilme = document.querySelector("#input-buscar-filme");
 let btnBuscarFilme = document.querySelector("#btn-buscar-filme");
 let listaFilmes = document.querySelector("#lista-filmes");
 let mostrarFilmes = document.querySelector("#mostrar-filme");
+let navFavoritos = document.querySelector("#nav-favoritos");
 btnBuscarFilme.onclick  = () => {
     if(inputBuscarFilme.value.length > 0){
         let filmes = new Array();
@@ -88,3 +89,8 @@ let detalhesFilme = async (id) => {
         }
     });
 }
+
+    
+navFavoritos.onclick = () =>{
+    
+   }
